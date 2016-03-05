@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<title>media browser and media player</title>	
+	<head>
+	<script src="jquery-1.12.0.min.js"></script>
+	</head>
+	<body>
+		<h1>media browser and media player</h1>
+		<input id ="input_file" type ="file"></input>
+		<!--<div><video id = "vid" width = "600px" height = "420px"  controls autoplay></video></div> -->
+		<div id = 'mediaDiv'></div>
+			
+		<script>
+		
+		
+		$("#input_file").change(function () {
+			alert("file has been chosen");
+			file = this.files[0];
+			fileUrl = URL.createObjectURL(file);
+			$("#mediaDiv").html("<video id='vid' controls height='300px' width='600px'></video>");
+			$("#vid").prop("src",fileUrl);
+			console.log(this.files[0].size);
+			//getUrl(this.files[0]);
+		});
+		</script>
+
+	</body>
+</html>
